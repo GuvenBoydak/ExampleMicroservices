@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0D420AB6-DD25-4EDC-A970-11F35223EF55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{881CAB8C-D3C5-4C86-A3FA-97B84B01FD9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogService.Api", "Services\Catalog\CatalogService.Api\CatalogService.Api.csproj", "{5B814D0F-8264-4181-A550-EE84DDFDE5C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiPorts", "ApiPorts", "{2BFC600D-F18B-49F8-B1E9-C923248EC186}"
+	ProjectSection(SolutionItems) = preProject
+		Services\Ports = Services\Ports
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{881CAB8C-D3C5-4C86-A3FA-97B84B01FD9E} = {0D420AB6-DD25-4EDC-A970-11F35223EF55}
+		{5B814D0F-8264-4181-A550-EE84DDFDE5C0} = {881CAB8C-D3C5-4C86-A3FA-97B84B01FD9E}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B814D0F-8264-4181-A550-EE84DDFDE5C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B814D0F-8264-4181-A550-EE84DDFDE5C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B814D0F-8264-4181-A550-EE84DDFDE5C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B814D0F-8264-4181-A550-EE84DDFDE5C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
