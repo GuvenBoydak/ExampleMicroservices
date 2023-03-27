@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{F31A74
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleMicroservice.Shared", "Shared\ExampleMicroservice.Shared\ExampleMicroservice.Shared.csproj", "{FB5DE955-4BBD-4CC4-B0A6-BC43DF627490}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{C09F3212-DC13-4FF6-8019-5BD09B66BF59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer\IdentityServer.csproj", "{E9CDD052-4C15-48AC-93E6-EEE9992CB169}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +28,7 @@ Global
 		{881CAB8C-D3C5-4C86-A3FA-97B84B01FD9E} = {0D420AB6-DD25-4EDC-A970-11F35223EF55}
 		{5B814D0F-8264-4181-A550-EE84DDFDE5C0} = {881CAB8C-D3C5-4C86-A3FA-97B84B01FD9E}
 		{FB5DE955-4BBD-4CC4-B0A6-BC43DF627490} = {F31A74C7-D56A-4F3B-9605-1973A751AE81}
+		{E9CDD052-4C15-48AC-93E6-EEE9992CB169} = {C09F3212-DC13-4FF6-8019-5BD09B66BF59}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5B814D0F-8264-4181-A550-EE84DDFDE5C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -34,5 +39,9 @@ Global
 		{FB5DE955-4BBD-4CC4-B0A6-BC43DF627490}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB5DE955-4BBD-4CC4-B0A6-BC43DF627490}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB5DE955-4BBD-4CC4-B0A6-BC43DF627490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9CDD052-4C15-48AC-93E6-EEE9992CB169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9CDD052-4C15-48AC-93E6-EEE9992CB169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9CDD052-4C15-48AC-93E6-EEE9992CB169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9CDD052-4C15-48AC-93E6-EEE9992CB169}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
