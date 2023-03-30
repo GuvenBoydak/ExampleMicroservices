@@ -1,6 +1,6 @@
 ﻿namespace IdentityServer.Dtos
 {
-    public class SingUpDto
+    public class SignUpDto
     {
         public string UserName { get; set; }
         public string Email { get; set; }

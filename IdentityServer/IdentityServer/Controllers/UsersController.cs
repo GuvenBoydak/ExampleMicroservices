@@ -1,14 +1,18 @@
-﻿using System.Linq;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Threading.Tasks;
 using ExampleMicroservice.Shared.Dtos;
 using IdentityServer.Dtos;
 using IdentityServer.Models;
+using IdentityServer4;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IdentityServer.Controllers
 {
-    [Route("api/[controller]")]
+    [Authorize(IdentityServerConstants.LocalApi.PolicyName)]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
@@ -20,17 +24,37 @@ namespace IdentityServer.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SingUp(SingUpDto singUpDto)
+        public async Task<IActionResult> SignUp(SignUpDto signUpDto)
         {
             var user = new ApplicationUser()
-                { UserName = singUpDto.UserName, Email = singUpDto.Email, City = singUpDto.City };
+                { UserName = signUpDto.UserName, Email = signUpDto.Email, City = signUpDto.City };
 
-            var result = await _userManager.CreateAsync(user, singUpDto.Password);
+            var result = await _userManager.CreateAsync(user, signUpDto.Password);
 
             if (!result.Succeeded)
                 return BadRequest(Response<NoContentDto>.Fail(result.Errors.Select(x => x.Description).ToList(), 400));
 
             return NoContent();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetUser()
+        {
+            var userIdClaim = User.Claims.FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Sub);
+            if (userIdClaim == null)
+                return BadRequest();
+
+            var user = await _userManager.FindByIdAsync(userIdClaim.Value);
+            if (user == null)
+                return BadRequest();
+
+            return Ok(new
+            {
+                Id = user.Id,
+                UserName = user.UserName,
+                Email = user.Email,
+                City = user.City
+            });
         }
     }
 }
