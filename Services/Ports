@@ -1,3 +1,5 @@
 ﻿identityService => http://localhost:5001
+
 Catalog.Api => http://localhost:5011
 PhotoStock.Api => http://localhost:5012
+Basket.Api => http://localhost:5013
