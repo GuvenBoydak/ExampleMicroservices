@@ -69,11 +69,11 @@ namespace IdentityServer
                         IdentityServerConstants.LocalApi.ScopeName,
                         "roles"
                     },
-                    AccessTokenLifetime = 1*60*60,
+                    AccessTokenLifetime = 1 * 60 * 60,
                     RefreshTokenExpiration = TokenExpiration.Absolute,
                     AbsoluteRefreshTokenLifetime = (int)(DateTime.Now.AddDays(60) - DateTime.Now).TotalSeconds,
                     RefreshTokenUsage = TokenUsage.ReUse
-                },
+                }
             };
     }
 }
