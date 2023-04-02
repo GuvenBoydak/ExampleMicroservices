@@ -10,7 +10,7 @@ namespace PhotoStockService.Api.Controllers;
 [ApiController]
 public class PhotosController : CustomBaseController
 {
-    [HttpGet]
+    [HttpPost]
     public async Task<IActionResult> PhotoSave(IFormFile photo, CancellationToken cancellationToken)
     {
         if (photo != null & photo.Length > 0)
