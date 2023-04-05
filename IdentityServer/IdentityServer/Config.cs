@@ -15,6 +15,7 @@ namespace IdentityServer
         {
             new ApiResource("resource_catalog") { Scopes = { "catalog_fullpermission" } },
             new ApiResource("resource_photo_stock") { Scopes = { "photo_stock_fullpermission" } },
+            new ApiResource("resource_basket") { Scopes = { "basket_fullpermission" } },
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -35,6 +36,7 @@ namespace IdentityServer
             {
                 new ApiScope("catalog_fullpermission", "Catalog Api icin full erisim"),
                 new ApiScope("photo_stock_fullpermission", "Photo Stock Api icin full erisim"),
+                new ApiScope("basket_fullpermission", "Basket Api icin full erisim"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -49,7 +51,7 @@ namespace IdentityServer
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     AllowedScopes =
                     {
-                        "catalog_fullpermission", "photo_stock_fullpermission",
+                        "catalog_fullpermission", "photo_stock_fullpermission", "basket_fullpermission",
                         IdentityServerConstants.LocalApi.ScopeName
                     }
                 },
@@ -62,6 +64,7 @@ namespace IdentityServer
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                     AllowedScopes =
                     {
+                        "basket_fullpermission",
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
