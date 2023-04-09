@@ -1,36 +1,23 @@
 using System.IdentityModel.Tokens.Jwt;
-using BasketService.Api.Services;
-using BasketService.Api.Settings;
+using DiscountService.Api.Services;
 using ExampleMicroservice.Shared.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
-using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-builder.Services.Configure<RedisSettings>(builder.Configuration.GetSection("RedisSettings"));
-
-builder.Services.AddSingleton<RedisService>(sp =>
-{
-    var redisSettings = sp.GetRequiredService<IOptions<RedisSettings>>().Value;
-    var redis = new RedisService(redisSettings.Host, redisSettings.Port);
-    redis.Connect();
-    return redis;
-});
-
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddScoped<ISharedIdentityService, SharedIdentityService>();
-builder.Services.AddScoped<IBasketService, BasketService.Api.Services.BasketService>();
+builder.Services.AddScoped<IDiscountService, DiscountService.Api.Services.DiscountService>();
+builder.Services.AddScoped<ISharedIdentityService,SharedIdentityService>();
 
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
     opt =>
     {
         opt.Authority = builder.Configuration["IdentityServerURL"];
-        opt.Audience = "resource_basket";
+        opt.Audience = "resource_discount";
         opt.RequireHttpsMetadata = false;
     });
 
