@@ -22,8 +22,6 @@ public class OrderDbContext : DbContext
         modelBuilder.Entity<OrderItem>().Property(x => x.Price).HasColumnType("decimal(18,2)");
 
         modelBuilder.Entity<Order>().OwnsOne(o => o.Address).WithOwner();
-        
-
-
+        base.OnModelCreating(modelBuilder);
     }
 }

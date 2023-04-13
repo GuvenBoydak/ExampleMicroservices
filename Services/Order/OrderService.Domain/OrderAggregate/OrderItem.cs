@@ -4,6 +4,10 @@ namespace OrderService.Domain.OrderAggregate;
 
 public class OrderItem : Entity
 {
+    public OrderItem()
+    {
+    }
+
     public OrderItem(decimal price, string pictureUrl, string productName, string productId)
     {
         Price = price;

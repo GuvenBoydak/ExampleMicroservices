@@ -4,6 +4,9 @@ namespace OrderService.Domain.OrderAggregate;
 
 public class Order : Entity, IAggregateRoot
 {
+    public Order()
+    { }
+
     public Order(string buyerId, Address address)
     {
         BuyerId = buyerId;
@@ -15,7 +18,6 @@ public class Order : Entity, IAggregateRoot
     private readonly List<OrderItem> _orderItems;
 
     public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
-
     public string BuyerId { get; private set; }
     public Address Address { get; private set; }
     public DateTime CreatedDate { get; private set; }

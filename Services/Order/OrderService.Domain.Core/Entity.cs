@@ -3,9 +3,9 @@
 public class Entity
 {
     private int? _requestedHashCode;
-    private int _Id;
+    private Guid _Id;
 
-    public virtual int Id
+    public virtual Guid Id
     {
         get => _Id;
         set => _Id = value;
@@ -13,7 +13,7 @@ public class Entity
 
     public bool IsTransient()
     {
-        return this.Id == default(Int32);
+        return this.Id == default(Guid);
     }
 
     public override int GetHashCode()

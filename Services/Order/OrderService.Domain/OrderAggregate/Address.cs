@@ -4,6 +4,11 @@ namespace OrderService.Domain.OrderAggregate;
 
 public class Address : ValueObject
 {
+
+    public Address()
+    {
+
+    }
     public Address(string province, string district, string street, string zipCode, string line)
     {
         Province = province;
