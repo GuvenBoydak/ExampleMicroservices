@@ -51,6 +51,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{D549
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayService.Api", "Gateway\GatewayService.Api\GatewayService.Api.csproj", "{E78C9AFF-34EC-40B9-BD34-5FC954B408B8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontends", "Frontends", "{EC77BB2E-02EE-4299-A7BC-C560F6D4E9DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleMicroservice.UI_MVC", "Frontends\ExampleMicroservice.UI_MVC\ExampleMicroservice.UI_MVC.csproj", "{D63937ED-A307-4599-B60F-909B306DC23F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +80,7 @@ Global
 		{0C6B752F-F4A8-49A2-B319-E5C584958154} = {0D420AB6-DD25-4EDC-A970-11F35223EF55}
 		{5476B5A5-86C4-417E-B23E-BAC3F0E285A8} = {0C6B752F-F4A8-49A2-B319-E5C584958154}
 		{E78C9AFF-34EC-40B9-BD34-5FC954B408B8} = {D5494696-5124-4DBE-BCE6-E9263F747471}
+		{D63937ED-A307-4599-B60F-909B306DC23F} = {EC77BB2E-02EE-4299-A7BC-C560F6D4E9DE}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5B814D0F-8264-4181-A550-EE84DDFDE5C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -130,5 +135,9 @@ Global
 		{E78C9AFF-34EC-40B9-BD34-5FC954B408B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E78C9AFF-34EC-40B9-BD34-5FC954B408B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E78C9AFF-34EC-40B9-BD34-5FC954B408B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D63937ED-A307-4599-B60F-909B306DC23F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D63937ED-A307-4599-B60F-909B306DC23F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D63937ED-A307-4599-B60F-909B306DC23F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D63937ED-A307-4599-B60F-909B306DC23F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
