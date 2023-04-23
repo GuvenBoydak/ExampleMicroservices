@@ -15,6 +15,7 @@ public class AuthController : Controller
         _identityService = identityService;
     }
 
+    [HttpGet]
     public IActionResult SignIn()
     {
         return View();
@@ -32,10 +33,7 @@ public class AuthController : Controller
 
         if (!response.IsSuccessful)
         {
-            response.Errors.ForEach(x =>
-            {
-                ModelState.AddModelError(String.Empty, x);
-            });
+            response.Errors.ForEach(x => { ModelState.AddModelError(String.Empty, x); });
 
             return View();
         }
@@ -43,6 +41,7 @@ public class AuthController : Controller
         return RedirectToAction(nameof(Index), "Home");
     }
 
+    [HttpGet]
     public async Task<IActionResult> Logout()
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
