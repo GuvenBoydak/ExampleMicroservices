@@ -18,7 +18,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient<IIdentityService, IdentityService>();
 builder.Services.AddScoped<ISharedIdentityService, SharedIdentityService>();
 builder.Services.AddAccessTokenManagement();
-builder.Services.AddScoped<PhotoHelper>();
+builder.Services.AddSingleton<PhotoHelper>();
 
 
 builder.Services.AddScoped<ResourceOwnerPasswordTokenHandler>();
@@ -36,7 +36,7 @@ builder.Services.AddHttpClient<ICatalogService, CatalogService>(opt =>
 
 builder.Services.AddHttpClient<IPhotoStockService, PhotoStockService>(opt =>
 {
-    opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.PhotoStock.Path}");
+    opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}{serviceApiSettings.PhotoStock.Path}");
 }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
 
 builder.Services.AddHttpClient<IClientCredentialTokenService, ClientCredentialTokenService>();
@@ -65,6 +65,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();

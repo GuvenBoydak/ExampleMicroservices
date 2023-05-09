@@ -25,8 +25,8 @@ namespace ExampleMicroservice.UI_MVC.Services
             {
                 return null;
             }
-            // örnek dosya ismi= 203802340234.jpg
-            var randonFilename = $"{Guid.NewGuid().ToString()}{Path.GetExtension(photo.FileName)}";
+
+            var randomFilename = $"{Guid.NewGuid().ToString()}{Path.GetExtension(photo.FileName)}";
 
             using var ms = new MemoryStream();
 
@@ -34,7 +34,7 @@ namespace ExampleMicroservice.UI_MVC.Services
 
             var multipartContent = new MultipartFormDataContent();
 
-            multipartContent.Add(new ByteArrayContent(ms.ToArray()), "photo", randonFilename);
+            multipartContent.Add(new ByteArrayContent(ms.ToArray()), "photo", randomFilename);
 
             var response = await _httpClient.PostAsync("photos", multipartContent);
 
