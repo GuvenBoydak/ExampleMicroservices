@@ -31,7 +31,7 @@
           "Port": 5012
         }
       ],
-      "UpstreamPathTemplate": "/services/photos/{everything}",
+      "UpstreamPathTemplate": "/services/photo/{everything}",
       "UpstreamHttpMethod": [
         "Get",
         "Post",
@@ -41,7 +41,7 @@
       "UpstreamScheme": "http",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "GatewayAuthenticationScheme",
-        "AllowedScopes": ["photos_fullpermission"]
+        "AllowedScopes": ["photo_stock_fullpermission"]
       }
     },
     {
@@ -53,7 +53,7 @@
           "Port": 5013
         }
       ],
-      "UpstreamPathTemplate": "/services/baskets/{everything}",
+      "UpstreamPathTemplate": "/services/basket/{everything}",
       "UpstreamHttpMethod": [
         "Get",
         "Post",
@@ -75,7 +75,7 @@
           "Port": 5014
         }
       ],
-      "UpstreamPathTemplate": "/services/discounts/{everything}",
+      "UpstreamPathTemplate": "/services/discount/{everything}",
       "UpstreamHttpMethod": [
         "Get",
         "Post",
@@ -97,7 +97,7 @@
           "Port": 5015
         }
       ],
-      "UpstreamPathTemplate": "/services/orders/{everything}",
+      "UpstreamPathTemplate": "/services/order/{everything}",
       "UpstreamHttpMethod": [
         "Get",
         "Post",
@@ -119,7 +119,7 @@
           "Port": 5016
         }
       ],
-      "UpstreamPathTemplate": "/services/fakepayments/{everything}",
+      "UpstreamPathTemplate": "/services/fakepayment/{everything}",
       "UpstreamHttpMethod": [
         "Get",
         "Post",
