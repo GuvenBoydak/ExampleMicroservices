@@ -5,6 +5,8 @@ using ExampleMicroservice.UI_MVC.Helpers;
 using ExampleMicroservice.UI_MVC.Models;
 using ExampleMicroservice.UI_MVC.Services;
 using ExampleMicroservice.UI_MVC.Services.Interfaces;
+using ExampleMicroservice.UI_MVC.Validators;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +14,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var clientSettings = builder.Configuration.GetSection("ClientSettings");
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddControllersWithViews()
+    .AddFluentValidation((fv => fv.RegisterValidatorsFromAssemblyContaining<CourseCreateInputValidator>()));
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient<IIdentityService, IdentityService>();
