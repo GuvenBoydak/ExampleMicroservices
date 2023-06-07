@@ -2,15 +2,13 @@
     ViewData["Title"] = "Home Page";
     var count = 0;
 }
-@using Microsoft.AspNetCore.Mvc.TagHelpers
+
 @model List<ExampleMicroservice.UI_MVC.Models.Catalogs.CourseViewModel>
 <h2>Kurslar</h2>
 <hr />
 
 @if (Model.Any())
-
 {
-
     @foreach (var item in Model)
     {
         count++;
@@ -38,6 +36,5 @@
         {
             @Html.Raw("</div>")
         }
-
     }
 }
