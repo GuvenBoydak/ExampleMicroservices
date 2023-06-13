@@ -9,16 +9,16 @@
 
         public decimal Price { get; set; }
 
-        private decimal? DiscountAppliedPrice;
+        private decimal? _discountAppliedPrice;
 
         public decimal GetCurrentPrice
         {
-            get => DiscountAppliedPrice != null ? DiscountAppliedPrice.Value : Price;
+            get => _discountAppliedPrice != null ? _discountAppliedPrice.Value : Price;
         }
 
         public void AppliedDiscount(decimal discountPrice)
         {
-            DiscountAppliedPrice = discountPrice;
+            _discountAppliedPrice = discountPrice;
         }
     }
 }
