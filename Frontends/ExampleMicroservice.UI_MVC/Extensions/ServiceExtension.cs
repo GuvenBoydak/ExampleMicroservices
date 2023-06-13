@@ -7,10 +7,10 @@ namespace ExampleMicroservice.UI_MVC.Extensions;
 
 public static class ServiceExtension
 {
-    public static void AddHttpClientServices(this IServiceCollection service,IConfiguration configuration)
+    public static void AddHttpClientServices(this IServiceCollection service, IConfiguration configuration)
     {
         var serviceApiSettings = configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
-        
+
         service.AddHttpClient<IUserService, UserService>(opt =>
         {
             opt.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri);
@@ -30,11 +30,15 @@ public static class ServiceExtension
         {
             opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}{serviceApiSettings.Basket.Path}");
         }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
-        
+
         service.AddHttpClient<IDiscountService, DiscountService>(opt =>
         {
             opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}{serviceApiSettings.Discount.Path}");
         }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
 
+        service.AddHttpClient<IPaymentService, PaymentService>(opt =>
+        {
+            opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}{serviceApiSettings.Payment.Path}");
+        }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
     }
 }
